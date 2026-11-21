@@ -3,6 +3,7 @@
 #define BRANDON_ALG_H
 
 #include <vector> 
+#include <stdexcept>
 
 template <typename T> 
 bool linear_search(const std::vector<T>& items, const T& target)
@@ -63,8 +64,43 @@ void selection_sort(std::vector<T>& items) {
 	}
 }
 
+template <typename T> 
+int count_occurences(std::vector<T>& items, const T& target) {
+	int matches = 0;
+	for (std::size_t i = 0; i < items.size(); i++){
+		if (items.size() < 0){
+			return 0;
+		}
+		if (items[i] == target){
+			matches++;
+		} 
+		
+	}
+	return matches;
+}
 
 
+template <typename T> 
+T find_max(std::vector<T>& items){
+	T max;
+	for(std::size_t i = 0; i < items.size(); i++){
+		if (items.size() < 0) {
+		throw std::out_of_range("vector is empty!"); 
+		}
+		std::size_t max_index = i;
+		 max = items[i];
+		
+		for(std::size_t m = i + 1; m < items.size();  m++){
+			if (items[m] > max){
+				max = items[m];
+			}
+		}
+	
+
+	}
+return max;
+
+}
 
 
 

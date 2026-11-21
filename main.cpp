@@ -17,8 +17,8 @@ int main()
 {
 	cout << "CUSTOM SEARCH AND SORT  LIBRARY!!\n"; 
 
-	vector<int> numbers = {29, 10, 15, 32, 44}; 
-
+	vector<int> numbers = {29, 15, 10, 15, 32, 44}; 
+	vector<string> games = {};
 	cout << "Orginal numbers: "; 
 	display_vector(numbers); 
 
@@ -60,5 +60,13 @@ int main()
 	display_vector(names);
 
 	cout << "Linear search for Racheal"  << (binary_search_custom(names, string("Rachael")) ? " was found\n" : " was not found in the collection\n");
+      int target2 = 15;
+	cout << "Counting occurences"<< (count_occurences(numbers, target2)) << "\n"; 
+	
+	
+	cout << "Max value" << (find_max(numbers)) << "\n";
+	string game = "minecraft";
+	cout << "Counting occurences fail " << (count_occurences(games, game)) << "\n"; 
 
+	cout << "max value fail " << (find_max(games)) << "\n";
 }
